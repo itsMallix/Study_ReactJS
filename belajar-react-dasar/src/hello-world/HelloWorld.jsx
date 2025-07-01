@@ -1,29 +1,25 @@
+import "./HelloWorld.css";
 function HeaderHelloWorld({text = "Ups, gaada text wak"}){
     // const text = "hello world";
     return (
-        <h1 style={{
-            color: "red",
-            backgroundColor: "black"
-        }}>{text.toUpperCase()}</h1>
+        <h1 className="title">{text.toUpperCase()}</h1>
     )
 }
 
 function ParagraphHelloWorld(){
     const text = "Hello World loh ya";
-    const style ={
-        color: "black",
-        backgroundColor: "yellow"
-    };
-
     return (
-        <p style={style}>{text.toLowerCase()}</p>
+        <p className="content">{text.toLowerCase()}</p>
     )
 }
 
 export default function HelloWorld(){
+    const props = {
+        text: "Bawakdehelwak from spread syntax"
+    }
     return (
         <div>
-            <HeaderHelloWorld text="Bawakdehelwak"/> 
+            <HeaderHelloWorld {...props}/> {/*spread syntax buat ngirim props keseluruhan tanpa nulis satu satu*/} 
             <ParagraphHelloWorld/>
         </div>
     )
